@@ -1,0 +1,1270 @@
+Created by PLY version 3.4 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    newline
+
+Grammar
+
+Rule 0     S' -> gLine
+Rule 1     gLine -> gCommand
+Rule 2     gLine -> gCommand gCommand
+Rule 3     gLine -> <empty>
+Rule 4     gCommand -> gWord
+Rule 5     gCommand -> gWord LETTER NUMBER
+Rule 6     gCommand -> gWord LETTER NUMBER LETTER NUMBER
+Rule 7     gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER
+Rule 8     gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+Rule 9     gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+Rule 10    gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+Rule 11    gCommand -> gWord COMMENT
+Rule 12    gCommand -> COMMENT
+Rule 13    gWord -> MOVE
+Rule 14    gWord -> DWELL
+Rule 15    gWord -> MOVE_TO_ORIGIN
+Rule 16    gWord -> SET_POSITION
+Rule 17    gWord -> SET_INACTIVITY_SHUTDOWN
+Rule 18    gWord -> SET_AXIS_STEPS
+Rule 19    gWord -> SET_TEMP
+Rule 20    gWord -> FAN_ON
+Rule 21    gWord -> SET_TEMP_WAIT
+Rule 22    gWord -> BED_TEMP
+Rule 23    gWord -> WAIT_4_BED_TEMP
+Rule 24    gWord -> SET_FILAMENT_DIA
+Rule 25    gWord -> SET_MAX
+Rule 26    gWord -> SET_DEFAULT_ACCEL
+Rule 27    gWord -> ADV_SETTINGS
+Rule 28    gWord -> SET_HOME_OFFSET
+Rule 29    gWord -> SET_RETRACT_LEN
+Rule 30    gWord -> SET_RECOV_OF_UNRETRACT
+Rule 31    gWord -> ENABLE_AUTO_RETRACT
+Rule 32    gWord -> SET_SPEED_OVERRIDE
+Rule 33    gWord -> SET_EXTRUDE_OVERRIDE
+Rule 34    gWord -> LETTER NUMBER
+
+Terminals, with rules where they appear
+
+ADV_SETTINGS         : 27
+BED_TEMP             : 22
+COMMENT              : 11 12
+DWELL                : 14
+ENABLE_AUTO_RETRACT  : 31
+FAN_ON               : 20
+LETTER               : 5 6 6 7 7 7 8 8 8 8 9 9 9 9 9 10 10 10 10 10 10 34
+MOVE                 : 13
+MOVE_TO_ORIGIN       : 15
+NUMBER               : 5 6 6 7 7 7 8 8 8 8 9 9 9 9 9 10 10 10 10 10 10 34
+SET_AXIS_STEPS       : 18
+SET_DEFAULT_ACCEL    : 26
+SET_EXTRUDE_OVERRIDE : 33
+SET_FILAMENT_DIA     : 24
+SET_HOME_OFFSET      : 28
+SET_INACTIVITY_SHUTDOWN : 17
+SET_MAX              : 25
+SET_POSITION         : 16
+SET_RECOV_OF_UNRETRACT : 30
+SET_RETRACT_LEN      : 29
+SET_SPEED_OVERRIDE   : 32
+SET_TEMP             : 19
+SET_TEMP_WAIT        : 21
+WAIT_4_BED_TEMP      : 23
+error                : 
+newline              : 
+
+Nonterminals, with rules where they appear
+
+gCommand             : 1 2 2
+gLine                : 0
+gWord                : 4 5 6 7 8 9 10 11
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . gLine
+    (1) gLine -> . gCommand
+    (2) gLine -> . gCommand gCommand
+    (3) gLine -> .
+    (4) gCommand -> . gWord
+    (5) gCommand -> . gWord LETTER NUMBER
+    (6) gCommand -> . gWord LETTER NUMBER LETTER NUMBER
+    (7) gCommand -> . gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (8) gCommand -> . gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (9) gCommand -> . gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (10) gCommand -> . gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (11) gCommand -> . gWord COMMENT
+    (12) gCommand -> . COMMENT
+    (13) gWord -> . MOVE
+    (14) gWord -> . DWELL
+    (15) gWord -> . MOVE_TO_ORIGIN
+    (16) gWord -> . SET_POSITION
+    (17) gWord -> . SET_INACTIVITY_SHUTDOWN
+    (18) gWord -> . SET_AXIS_STEPS
+    (19) gWord -> . SET_TEMP
+    (20) gWord -> . FAN_ON
+    (21) gWord -> . SET_TEMP_WAIT
+    (22) gWord -> . BED_TEMP
+    (23) gWord -> . WAIT_4_BED_TEMP
+    (24) gWord -> . SET_FILAMENT_DIA
+    (25) gWord -> . SET_MAX
+    (26) gWord -> . SET_DEFAULT_ACCEL
+    (27) gWord -> . ADV_SETTINGS
+    (28) gWord -> . SET_HOME_OFFSET
+    (29) gWord -> . SET_RETRACT_LEN
+    (30) gWord -> . SET_RECOV_OF_UNRETRACT
+    (31) gWord -> . ENABLE_AUTO_RETRACT
+    (32) gWord -> . SET_SPEED_OVERRIDE
+    (33) gWord -> . SET_EXTRUDE_OVERRIDE
+    (34) gWord -> . LETTER NUMBER
+
+    $end            reduce using rule 3 (gLine -> .)
+    COMMENT         shift and go to state 8
+    MOVE            shift and go to state 5
+    DWELL           shift and go to state 23
+    MOVE_TO_ORIGIN  shift and go to state 13
+    SET_POSITION    shift and go to state 15
+    SET_INACTIVITY_SHUTDOWN shift and go to state 19
+    SET_AXIS_STEPS  shift and go to state 18
+    SET_TEMP        shift and go to state 16
+    FAN_ON          shift and go to state 12
+    SET_TEMP_WAIT   shift and go to state 20
+    BED_TEMP        shift and go to state 2
+    WAIT_4_BED_TEMP shift and go to state 14
+    SET_FILAMENT_DIA shift and go to state 10
+    SET_MAX         shift and go to state 26
+    SET_DEFAULT_ACCEL shift and go to state 11
+    ADV_SETTINGS    shift and go to state 9
+    SET_HOME_OFFSET shift and go to state 21
+    SET_RETRACT_LEN shift and go to state 6
+    SET_RECOV_OF_UNRETRACT shift and go to state 25
+    ENABLE_AUTO_RETRACT shift and go to state 3
+    SET_SPEED_OVERRIDE shift and go to state 7
+    SET_EXTRUDE_OVERRIDE shift and go to state 1
+    LETTER          shift and go to state 4
+
+    gLine                          shift and go to state 22
+    gWord                          shift and go to state 24
+    gCommand                       shift and go to state 17
+
+state 1
+
+    (33) gWord -> SET_EXTRUDE_OVERRIDE .
+
+    LETTER          reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    COMMENT         reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    $end            reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    MOVE            reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    DWELL           reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    MOVE_TO_ORIGIN  reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    SET_POSITION    reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    SET_AXIS_STEPS  reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    SET_TEMP        reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    FAN_ON          reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    SET_TEMP_WAIT   reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    BED_TEMP        reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    WAIT_4_BED_TEMP reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    SET_FILAMENT_DIA reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    SET_MAX         reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    SET_DEFAULT_ACCEL reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    ADV_SETTINGS    reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    SET_HOME_OFFSET reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    SET_RETRACT_LEN reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    ENABLE_AUTO_RETRACT reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    SET_SPEED_OVERRIDE reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 33 (gWord -> SET_EXTRUDE_OVERRIDE .)
+
+
+state 2
+
+    (22) gWord -> BED_TEMP .
+
+    LETTER          reduce using rule 22 (gWord -> BED_TEMP .)
+    COMMENT         reduce using rule 22 (gWord -> BED_TEMP .)
+    $end            reduce using rule 22 (gWord -> BED_TEMP .)
+    MOVE            reduce using rule 22 (gWord -> BED_TEMP .)
+    DWELL           reduce using rule 22 (gWord -> BED_TEMP .)
+    MOVE_TO_ORIGIN  reduce using rule 22 (gWord -> BED_TEMP .)
+    SET_POSITION    reduce using rule 22 (gWord -> BED_TEMP .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 22 (gWord -> BED_TEMP .)
+    SET_AXIS_STEPS  reduce using rule 22 (gWord -> BED_TEMP .)
+    SET_TEMP        reduce using rule 22 (gWord -> BED_TEMP .)
+    FAN_ON          reduce using rule 22 (gWord -> BED_TEMP .)
+    SET_TEMP_WAIT   reduce using rule 22 (gWord -> BED_TEMP .)
+    BED_TEMP        reduce using rule 22 (gWord -> BED_TEMP .)
+    WAIT_4_BED_TEMP reduce using rule 22 (gWord -> BED_TEMP .)
+    SET_FILAMENT_DIA reduce using rule 22 (gWord -> BED_TEMP .)
+    SET_MAX         reduce using rule 22 (gWord -> BED_TEMP .)
+    SET_DEFAULT_ACCEL reduce using rule 22 (gWord -> BED_TEMP .)
+    ADV_SETTINGS    reduce using rule 22 (gWord -> BED_TEMP .)
+    SET_HOME_OFFSET reduce using rule 22 (gWord -> BED_TEMP .)
+    SET_RETRACT_LEN reduce using rule 22 (gWord -> BED_TEMP .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 22 (gWord -> BED_TEMP .)
+    ENABLE_AUTO_RETRACT reduce using rule 22 (gWord -> BED_TEMP .)
+    SET_SPEED_OVERRIDE reduce using rule 22 (gWord -> BED_TEMP .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 22 (gWord -> BED_TEMP .)
+
+
+state 3
+
+    (31) gWord -> ENABLE_AUTO_RETRACT .
+
+    LETTER          reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    COMMENT         reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    $end            reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    MOVE            reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    DWELL           reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    MOVE_TO_ORIGIN  reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    SET_POSITION    reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    SET_AXIS_STEPS  reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    SET_TEMP        reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    FAN_ON          reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    SET_TEMP_WAIT   reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    BED_TEMP        reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    WAIT_4_BED_TEMP reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    SET_FILAMENT_DIA reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    SET_MAX         reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    SET_DEFAULT_ACCEL reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    ADV_SETTINGS    reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    SET_HOME_OFFSET reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    SET_RETRACT_LEN reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    ENABLE_AUTO_RETRACT reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    SET_SPEED_OVERRIDE reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 31 (gWord -> ENABLE_AUTO_RETRACT .)
+
+
+state 4
+
+    (34) gWord -> LETTER . NUMBER
+
+    NUMBER          shift and go to state 27
+
+
+state 5
+
+    (13) gWord -> MOVE .
+
+    LETTER          reduce using rule 13 (gWord -> MOVE .)
+    COMMENT         reduce using rule 13 (gWord -> MOVE .)
+    $end            reduce using rule 13 (gWord -> MOVE .)
+    MOVE            reduce using rule 13 (gWord -> MOVE .)
+    DWELL           reduce using rule 13 (gWord -> MOVE .)
+    MOVE_TO_ORIGIN  reduce using rule 13 (gWord -> MOVE .)
+    SET_POSITION    reduce using rule 13 (gWord -> MOVE .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 13 (gWord -> MOVE .)
+    SET_AXIS_STEPS  reduce using rule 13 (gWord -> MOVE .)
+    SET_TEMP        reduce using rule 13 (gWord -> MOVE .)
+    FAN_ON          reduce using rule 13 (gWord -> MOVE .)
+    SET_TEMP_WAIT   reduce using rule 13 (gWord -> MOVE .)
+    BED_TEMP        reduce using rule 13 (gWord -> MOVE .)
+    WAIT_4_BED_TEMP reduce using rule 13 (gWord -> MOVE .)
+    SET_FILAMENT_DIA reduce using rule 13 (gWord -> MOVE .)
+    SET_MAX         reduce using rule 13 (gWord -> MOVE .)
+    SET_DEFAULT_ACCEL reduce using rule 13 (gWord -> MOVE .)
+    ADV_SETTINGS    reduce using rule 13 (gWord -> MOVE .)
+    SET_HOME_OFFSET reduce using rule 13 (gWord -> MOVE .)
+    SET_RETRACT_LEN reduce using rule 13 (gWord -> MOVE .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 13 (gWord -> MOVE .)
+    ENABLE_AUTO_RETRACT reduce using rule 13 (gWord -> MOVE .)
+    SET_SPEED_OVERRIDE reduce using rule 13 (gWord -> MOVE .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 13 (gWord -> MOVE .)
+
+
+state 6
+
+    (29) gWord -> SET_RETRACT_LEN .
+
+    LETTER          reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    COMMENT         reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    $end            reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    MOVE            reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    DWELL           reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    MOVE_TO_ORIGIN  reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    SET_POSITION    reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    SET_AXIS_STEPS  reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    SET_TEMP        reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    FAN_ON          reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    SET_TEMP_WAIT   reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    BED_TEMP        reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    WAIT_4_BED_TEMP reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    SET_FILAMENT_DIA reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    SET_MAX         reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    SET_DEFAULT_ACCEL reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    ADV_SETTINGS    reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    SET_HOME_OFFSET reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    SET_RETRACT_LEN reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    ENABLE_AUTO_RETRACT reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    SET_SPEED_OVERRIDE reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 29 (gWord -> SET_RETRACT_LEN .)
+
+
+state 7
+
+    (32) gWord -> SET_SPEED_OVERRIDE .
+
+    LETTER          reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    COMMENT         reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    $end            reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    MOVE            reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    DWELL           reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    MOVE_TO_ORIGIN  reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    SET_POSITION    reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    SET_AXIS_STEPS  reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    SET_TEMP        reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    FAN_ON          reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    SET_TEMP_WAIT   reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    BED_TEMP        reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    WAIT_4_BED_TEMP reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    SET_FILAMENT_DIA reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    SET_MAX         reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    SET_DEFAULT_ACCEL reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    ADV_SETTINGS    reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    SET_HOME_OFFSET reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    SET_RETRACT_LEN reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    ENABLE_AUTO_RETRACT reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    SET_SPEED_OVERRIDE reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 32 (gWord -> SET_SPEED_OVERRIDE .)
+
+
+state 8
+
+    (12) gCommand -> COMMENT .
+
+    COMMENT         reduce using rule 12 (gCommand -> COMMENT .)
+    MOVE            reduce using rule 12 (gCommand -> COMMENT .)
+    DWELL           reduce using rule 12 (gCommand -> COMMENT .)
+    MOVE_TO_ORIGIN  reduce using rule 12 (gCommand -> COMMENT .)
+    SET_POSITION    reduce using rule 12 (gCommand -> COMMENT .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 12 (gCommand -> COMMENT .)
+    SET_AXIS_STEPS  reduce using rule 12 (gCommand -> COMMENT .)
+    SET_TEMP        reduce using rule 12 (gCommand -> COMMENT .)
+    FAN_ON          reduce using rule 12 (gCommand -> COMMENT .)
+    SET_TEMP_WAIT   reduce using rule 12 (gCommand -> COMMENT .)
+    BED_TEMP        reduce using rule 12 (gCommand -> COMMENT .)
+    WAIT_4_BED_TEMP reduce using rule 12 (gCommand -> COMMENT .)
+    SET_FILAMENT_DIA reduce using rule 12 (gCommand -> COMMENT .)
+    SET_MAX         reduce using rule 12 (gCommand -> COMMENT .)
+    SET_DEFAULT_ACCEL reduce using rule 12 (gCommand -> COMMENT .)
+    ADV_SETTINGS    reduce using rule 12 (gCommand -> COMMENT .)
+    SET_HOME_OFFSET reduce using rule 12 (gCommand -> COMMENT .)
+    SET_RETRACT_LEN reduce using rule 12 (gCommand -> COMMENT .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 12 (gCommand -> COMMENT .)
+    ENABLE_AUTO_RETRACT reduce using rule 12 (gCommand -> COMMENT .)
+    SET_SPEED_OVERRIDE reduce using rule 12 (gCommand -> COMMENT .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 12 (gCommand -> COMMENT .)
+    LETTER          reduce using rule 12 (gCommand -> COMMENT .)
+    $end            reduce using rule 12 (gCommand -> COMMENT .)
+
+
+state 9
+
+    (27) gWord -> ADV_SETTINGS .
+
+    LETTER          reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    COMMENT         reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    $end            reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    MOVE            reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    DWELL           reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    MOVE_TO_ORIGIN  reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    SET_POSITION    reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    SET_AXIS_STEPS  reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    SET_TEMP        reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    FAN_ON          reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    SET_TEMP_WAIT   reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    BED_TEMP        reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    WAIT_4_BED_TEMP reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    SET_FILAMENT_DIA reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    SET_MAX         reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    SET_DEFAULT_ACCEL reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    ADV_SETTINGS    reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    SET_HOME_OFFSET reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    SET_RETRACT_LEN reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    ENABLE_AUTO_RETRACT reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    SET_SPEED_OVERRIDE reduce using rule 27 (gWord -> ADV_SETTINGS .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 27 (gWord -> ADV_SETTINGS .)
+
+
+state 10
+
+    (24) gWord -> SET_FILAMENT_DIA .
+
+    LETTER          reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    COMMENT         reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    $end            reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    MOVE            reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    DWELL           reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    MOVE_TO_ORIGIN  reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    SET_POSITION    reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    SET_AXIS_STEPS  reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    SET_TEMP        reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    FAN_ON          reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    SET_TEMP_WAIT   reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    BED_TEMP        reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    WAIT_4_BED_TEMP reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    SET_FILAMENT_DIA reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    SET_MAX         reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    SET_DEFAULT_ACCEL reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    ADV_SETTINGS    reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    SET_HOME_OFFSET reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    SET_RETRACT_LEN reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    ENABLE_AUTO_RETRACT reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    SET_SPEED_OVERRIDE reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 24 (gWord -> SET_FILAMENT_DIA .)
+
+
+state 11
+
+    (26) gWord -> SET_DEFAULT_ACCEL .
+
+    LETTER          reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    COMMENT         reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    $end            reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    MOVE            reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    DWELL           reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    MOVE_TO_ORIGIN  reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    SET_POSITION    reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    SET_AXIS_STEPS  reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    SET_TEMP        reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    FAN_ON          reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    SET_TEMP_WAIT   reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    BED_TEMP        reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    WAIT_4_BED_TEMP reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    SET_FILAMENT_DIA reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    SET_MAX         reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    SET_DEFAULT_ACCEL reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    ADV_SETTINGS    reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    SET_HOME_OFFSET reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    SET_RETRACT_LEN reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    ENABLE_AUTO_RETRACT reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    SET_SPEED_OVERRIDE reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 26 (gWord -> SET_DEFAULT_ACCEL .)
+
+
+state 12
+
+    (20) gWord -> FAN_ON .
+
+    LETTER          reduce using rule 20 (gWord -> FAN_ON .)
+    COMMENT         reduce using rule 20 (gWord -> FAN_ON .)
+    $end            reduce using rule 20 (gWord -> FAN_ON .)
+    MOVE            reduce using rule 20 (gWord -> FAN_ON .)
+    DWELL           reduce using rule 20 (gWord -> FAN_ON .)
+    MOVE_TO_ORIGIN  reduce using rule 20 (gWord -> FAN_ON .)
+    SET_POSITION    reduce using rule 20 (gWord -> FAN_ON .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 20 (gWord -> FAN_ON .)
+    SET_AXIS_STEPS  reduce using rule 20 (gWord -> FAN_ON .)
+    SET_TEMP        reduce using rule 20 (gWord -> FAN_ON .)
+    FAN_ON          reduce using rule 20 (gWord -> FAN_ON .)
+    SET_TEMP_WAIT   reduce using rule 20 (gWord -> FAN_ON .)
+    BED_TEMP        reduce using rule 20 (gWord -> FAN_ON .)
+    WAIT_4_BED_TEMP reduce using rule 20 (gWord -> FAN_ON .)
+    SET_FILAMENT_DIA reduce using rule 20 (gWord -> FAN_ON .)
+    SET_MAX         reduce using rule 20 (gWord -> FAN_ON .)
+    SET_DEFAULT_ACCEL reduce using rule 20 (gWord -> FAN_ON .)
+    ADV_SETTINGS    reduce using rule 20 (gWord -> FAN_ON .)
+    SET_HOME_OFFSET reduce using rule 20 (gWord -> FAN_ON .)
+    SET_RETRACT_LEN reduce using rule 20 (gWord -> FAN_ON .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 20 (gWord -> FAN_ON .)
+    ENABLE_AUTO_RETRACT reduce using rule 20 (gWord -> FAN_ON .)
+    SET_SPEED_OVERRIDE reduce using rule 20 (gWord -> FAN_ON .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 20 (gWord -> FAN_ON .)
+
+
+state 13
+
+    (15) gWord -> MOVE_TO_ORIGIN .
+
+    LETTER          reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    COMMENT         reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    $end            reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    MOVE            reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    DWELL           reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    MOVE_TO_ORIGIN  reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    SET_POSITION    reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    SET_AXIS_STEPS  reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    SET_TEMP        reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    FAN_ON          reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    SET_TEMP_WAIT   reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    BED_TEMP        reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    WAIT_4_BED_TEMP reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    SET_FILAMENT_DIA reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    SET_MAX         reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    SET_DEFAULT_ACCEL reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    ADV_SETTINGS    reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    SET_HOME_OFFSET reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    SET_RETRACT_LEN reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    ENABLE_AUTO_RETRACT reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    SET_SPEED_OVERRIDE reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 15 (gWord -> MOVE_TO_ORIGIN .)
+
+
+state 14
+
+    (23) gWord -> WAIT_4_BED_TEMP .
+
+    LETTER          reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    COMMENT         reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    $end            reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    MOVE            reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    DWELL           reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    MOVE_TO_ORIGIN  reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    SET_POSITION    reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    SET_AXIS_STEPS  reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    SET_TEMP        reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    FAN_ON          reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    SET_TEMP_WAIT   reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    BED_TEMP        reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    WAIT_4_BED_TEMP reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    SET_FILAMENT_DIA reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    SET_MAX         reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    SET_DEFAULT_ACCEL reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    ADV_SETTINGS    reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    SET_HOME_OFFSET reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    SET_RETRACT_LEN reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    ENABLE_AUTO_RETRACT reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    SET_SPEED_OVERRIDE reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 23 (gWord -> WAIT_4_BED_TEMP .)
+
+
+state 15
+
+    (16) gWord -> SET_POSITION .
+
+    LETTER          reduce using rule 16 (gWord -> SET_POSITION .)
+    COMMENT         reduce using rule 16 (gWord -> SET_POSITION .)
+    $end            reduce using rule 16 (gWord -> SET_POSITION .)
+    MOVE            reduce using rule 16 (gWord -> SET_POSITION .)
+    DWELL           reduce using rule 16 (gWord -> SET_POSITION .)
+    MOVE_TO_ORIGIN  reduce using rule 16 (gWord -> SET_POSITION .)
+    SET_POSITION    reduce using rule 16 (gWord -> SET_POSITION .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 16 (gWord -> SET_POSITION .)
+    SET_AXIS_STEPS  reduce using rule 16 (gWord -> SET_POSITION .)
+    SET_TEMP        reduce using rule 16 (gWord -> SET_POSITION .)
+    FAN_ON          reduce using rule 16 (gWord -> SET_POSITION .)
+    SET_TEMP_WAIT   reduce using rule 16 (gWord -> SET_POSITION .)
+    BED_TEMP        reduce using rule 16 (gWord -> SET_POSITION .)
+    WAIT_4_BED_TEMP reduce using rule 16 (gWord -> SET_POSITION .)
+    SET_FILAMENT_DIA reduce using rule 16 (gWord -> SET_POSITION .)
+    SET_MAX         reduce using rule 16 (gWord -> SET_POSITION .)
+    SET_DEFAULT_ACCEL reduce using rule 16 (gWord -> SET_POSITION .)
+    ADV_SETTINGS    reduce using rule 16 (gWord -> SET_POSITION .)
+    SET_HOME_OFFSET reduce using rule 16 (gWord -> SET_POSITION .)
+    SET_RETRACT_LEN reduce using rule 16 (gWord -> SET_POSITION .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 16 (gWord -> SET_POSITION .)
+    ENABLE_AUTO_RETRACT reduce using rule 16 (gWord -> SET_POSITION .)
+    SET_SPEED_OVERRIDE reduce using rule 16 (gWord -> SET_POSITION .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 16 (gWord -> SET_POSITION .)
+
+
+state 16
+
+    (19) gWord -> SET_TEMP .
+
+    LETTER          reduce using rule 19 (gWord -> SET_TEMP .)
+    COMMENT         reduce using rule 19 (gWord -> SET_TEMP .)
+    $end            reduce using rule 19 (gWord -> SET_TEMP .)
+    MOVE            reduce using rule 19 (gWord -> SET_TEMP .)
+    DWELL           reduce using rule 19 (gWord -> SET_TEMP .)
+    MOVE_TO_ORIGIN  reduce using rule 19 (gWord -> SET_TEMP .)
+    SET_POSITION    reduce using rule 19 (gWord -> SET_TEMP .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 19 (gWord -> SET_TEMP .)
+    SET_AXIS_STEPS  reduce using rule 19 (gWord -> SET_TEMP .)
+    SET_TEMP        reduce using rule 19 (gWord -> SET_TEMP .)
+    FAN_ON          reduce using rule 19 (gWord -> SET_TEMP .)
+    SET_TEMP_WAIT   reduce using rule 19 (gWord -> SET_TEMP .)
+    BED_TEMP        reduce using rule 19 (gWord -> SET_TEMP .)
+    WAIT_4_BED_TEMP reduce using rule 19 (gWord -> SET_TEMP .)
+    SET_FILAMENT_DIA reduce using rule 19 (gWord -> SET_TEMP .)
+    SET_MAX         reduce using rule 19 (gWord -> SET_TEMP .)
+    SET_DEFAULT_ACCEL reduce using rule 19 (gWord -> SET_TEMP .)
+    ADV_SETTINGS    reduce using rule 19 (gWord -> SET_TEMP .)
+    SET_HOME_OFFSET reduce using rule 19 (gWord -> SET_TEMP .)
+    SET_RETRACT_LEN reduce using rule 19 (gWord -> SET_TEMP .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 19 (gWord -> SET_TEMP .)
+    ENABLE_AUTO_RETRACT reduce using rule 19 (gWord -> SET_TEMP .)
+    SET_SPEED_OVERRIDE reduce using rule 19 (gWord -> SET_TEMP .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 19 (gWord -> SET_TEMP .)
+
+
+state 17
+
+    (1) gLine -> gCommand .
+    (2) gLine -> gCommand . gCommand
+    (4) gCommand -> . gWord
+    (5) gCommand -> . gWord LETTER NUMBER
+    (6) gCommand -> . gWord LETTER NUMBER LETTER NUMBER
+    (7) gCommand -> . gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (8) gCommand -> . gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (9) gCommand -> . gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (10) gCommand -> . gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (11) gCommand -> . gWord COMMENT
+    (12) gCommand -> . COMMENT
+    (13) gWord -> . MOVE
+    (14) gWord -> . DWELL
+    (15) gWord -> . MOVE_TO_ORIGIN
+    (16) gWord -> . SET_POSITION
+    (17) gWord -> . SET_INACTIVITY_SHUTDOWN
+    (18) gWord -> . SET_AXIS_STEPS
+    (19) gWord -> . SET_TEMP
+    (20) gWord -> . FAN_ON
+    (21) gWord -> . SET_TEMP_WAIT
+    (22) gWord -> . BED_TEMP
+    (23) gWord -> . WAIT_4_BED_TEMP
+    (24) gWord -> . SET_FILAMENT_DIA
+    (25) gWord -> . SET_MAX
+    (26) gWord -> . SET_DEFAULT_ACCEL
+    (27) gWord -> . ADV_SETTINGS
+    (28) gWord -> . SET_HOME_OFFSET
+    (29) gWord -> . SET_RETRACT_LEN
+    (30) gWord -> . SET_RECOV_OF_UNRETRACT
+    (31) gWord -> . ENABLE_AUTO_RETRACT
+    (32) gWord -> . SET_SPEED_OVERRIDE
+    (33) gWord -> . SET_EXTRUDE_OVERRIDE
+    (34) gWord -> . LETTER NUMBER
+
+    $end            reduce using rule 1 (gLine -> gCommand .)
+    COMMENT         shift and go to state 8
+    MOVE            shift and go to state 5
+    DWELL           shift and go to state 23
+    MOVE_TO_ORIGIN  shift and go to state 13
+    SET_POSITION    shift and go to state 15
+    SET_INACTIVITY_SHUTDOWN shift and go to state 19
+    SET_AXIS_STEPS  shift and go to state 18
+    SET_TEMP        shift and go to state 16
+    FAN_ON          shift and go to state 12
+    SET_TEMP_WAIT   shift and go to state 20
+    BED_TEMP        shift and go to state 2
+    WAIT_4_BED_TEMP shift and go to state 14
+    SET_FILAMENT_DIA shift and go to state 10
+    SET_MAX         shift and go to state 26
+    SET_DEFAULT_ACCEL shift and go to state 11
+    ADV_SETTINGS    shift and go to state 9
+    SET_HOME_OFFSET shift and go to state 21
+    SET_RETRACT_LEN shift and go to state 6
+    SET_RECOV_OF_UNRETRACT shift and go to state 25
+    ENABLE_AUTO_RETRACT shift and go to state 3
+    SET_SPEED_OVERRIDE shift and go to state 7
+    SET_EXTRUDE_OVERRIDE shift and go to state 1
+    LETTER          shift and go to state 4
+
+    gWord                          shift and go to state 24
+    gCommand                       shift and go to state 28
+
+state 18
+
+    (18) gWord -> SET_AXIS_STEPS .
+
+    LETTER          reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    COMMENT         reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    $end            reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    MOVE            reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    DWELL           reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    MOVE_TO_ORIGIN  reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    SET_POSITION    reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    SET_AXIS_STEPS  reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    SET_TEMP        reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    FAN_ON          reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    SET_TEMP_WAIT   reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    BED_TEMP        reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    WAIT_4_BED_TEMP reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    SET_FILAMENT_DIA reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    SET_MAX         reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    SET_DEFAULT_ACCEL reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    ADV_SETTINGS    reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    SET_HOME_OFFSET reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    SET_RETRACT_LEN reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    ENABLE_AUTO_RETRACT reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    SET_SPEED_OVERRIDE reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 18 (gWord -> SET_AXIS_STEPS .)
+
+
+state 19
+
+    (17) gWord -> SET_INACTIVITY_SHUTDOWN .
+
+    LETTER          reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    COMMENT         reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    $end            reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    MOVE            reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    DWELL           reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    MOVE_TO_ORIGIN  reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    SET_POSITION    reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    SET_AXIS_STEPS  reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    SET_TEMP        reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    FAN_ON          reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    SET_TEMP_WAIT   reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    BED_TEMP        reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    WAIT_4_BED_TEMP reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    SET_FILAMENT_DIA reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    SET_MAX         reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    SET_DEFAULT_ACCEL reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    ADV_SETTINGS    reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    SET_HOME_OFFSET reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    SET_RETRACT_LEN reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    ENABLE_AUTO_RETRACT reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    SET_SPEED_OVERRIDE reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 17 (gWord -> SET_INACTIVITY_SHUTDOWN .)
+
+
+state 20
+
+    (21) gWord -> SET_TEMP_WAIT .
+
+    LETTER          reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    COMMENT         reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    $end            reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    MOVE            reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    DWELL           reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    MOVE_TO_ORIGIN  reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    SET_POSITION    reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    SET_AXIS_STEPS  reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    SET_TEMP        reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    FAN_ON          reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    SET_TEMP_WAIT   reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    BED_TEMP        reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    WAIT_4_BED_TEMP reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    SET_FILAMENT_DIA reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    SET_MAX         reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    SET_DEFAULT_ACCEL reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    ADV_SETTINGS    reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    SET_HOME_OFFSET reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    SET_RETRACT_LEN reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    ENABLE_AUTO_RETRACT reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    SET_SPEED_OVERRIDE reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 21 (gWord -> SET_TEMP_WAIT .)
+
+
+state 21
+
+    (28) gWord -> SET_HOME_OFFSET .
+
+    LETTER          reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    COMMENT         reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    $end            reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    MOVE            reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    DWELL           reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    MOVE_TO_ORIGIN  reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    SET_POSITION    reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    SET_AXIS_STEPS  reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    SET_TEMP        reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    FAN_ON          reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    SET_TEMP_WAIT   reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    BED_TEMP        reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    WAIT_4_BED_TEMP reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    SET_FILAMENT_DIA reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    SET_MAX         reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    SET_DEFAULT_ACCEL reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    ADV_SETTINGS    reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    SET_HOME_OFFSET reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    SET_RETRACT_LEN reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    ENABLE_AUTO_RETRACT reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    SET_SPEED_OVERRIDE reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 28 (gWord -> SET_HOME_OFFSET .)
+
+
+state 22
+
+    (0) S' -> gLine .
+
+
+
+state 23
+
+    (14) gWord -> DWELL .
+
+    LETTER          reduce using rule 14 (gWord -> DWELL .)
+    COMMENT         reduce using rule 14 (gWord -> DWELL .)
+    $end            reduce using rule 14 (gWord -> DWELL .)
+    MOVE            reduce using rule 14 (gWord -> DWELL .)
+    DWELL           reduce using rule 14 (gWord -> DWELL .)
+    MOVE_TO_ORIGIN  reduce using rule 14 (gWord -> DWELL .)
+    SET_POSITION    reduce using rule 14 (gWord -> DWELL .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 14 (gWord -> DWELL .)
+    SET_AXIS_STEPS  reduce using rule 14 (gWord -> DWELL .)
+    SET_TEMP        reduce using rule 14 (gWord -> DWELL .)
+    FAN_ON          reduce using rule 14 (gWord -> DWELL .)
+    SET_TEMP_WAIT   reduce using rule 14 (gWord -> DWELL .)
+    BED_TEMP        reduce using rule 14 (gWord -> DWELL .)
+    WAIT_4_BED_TEMP reduce using rule 14 (gWord -> DWELL .)
+    SET_FILAMENT_DIA reduce using rule 14 (gWord -> DWELL .)
+    SET_MAX         reduce using rule 14 (gWord -> DWELL .)
+    SET_DEFAULT_ACCEL reduce using rule 14 (gWord -> DWELL .)
+    ADV_SETTINGS    reduce using rule 14 (gWord -> DWELL .)
+    SET_HOME_OFFSET reduce using rule 14 (gWord -> DWELL .)
+    SET_RETRACT_LEN reduce using rule 14 (gWord -> DWELL .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 14 (gWord -> DWELL .)
+    ENABLE_AUTO_RETRACT reduce using rule 14 (gWord -> DWELL .)
+    SET_SPEED_OVERRIDE reduce using rule 14 (gWord -> DWELL .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 14 (gWord -> DWELL .)
+
+
+state 24
+
+    (4) gCommand -> gWord .
+    (5) gCommand -> gWord . LETTER NUMBER
+    (6) gCommand -> gWord . LETTER NUMBER LETTER NUMBER
+    (7) gCommand -> gWord . LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (8) gCommand -> gWord . LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (9) gCommand -> gWord . LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (10) gCommand -> gWord . LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (11) gCommand -> gWord . COMMENT
+
+  ! shift/reduce conflict for LETTER resolved as shift
+  ! shift/reduce conflict for COMMENT resolved as shift
+    MOVE            reduce using rule 4 (gCommand -> gWord .)
+    DWELL           reduce using rule 4 (gCommand -> gWord .)
+    MOVE_TO_ORIGIN  reduce using rule 4 (gCommand -> gWord .)
+    SET_POSITION    reduce using rule 4 (gCommand -> gWord .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 4 (gCommand -> gWord .)
+    SET_AXIS_STEPS  reduce using rule 4 (gCommand -> gWord .)
+    SET_TEMP        reduce using rule 4 (gCommand -> gWord .)
+    FAN_ON          reduce using rule 4 (gCommand -> gWord .)
+    SET_TEMP_WAIT   reduce using rule 4 (gCommand -> gWord .)
+    BED_TEMP        reduce using rule 4 (gCommand -> gWord .)
+    WAIT_4_BED_TEMP reduce using rule 4 (gCommand -> gWord .)
+    SET_FILAMENT_DIA reduce using rule 4 (gCommand -> gWord .)
+    SET_MAX         reduce using rule 4 (gCommand -> gWord .)
+    SET_DEFAULT_ACCEL reduce using rule 4 (gCommand -> gWord .)
+    ADV_SETTINGS    reduce using rule 4 (gCommand -> gWord .)
+    SET_HOME_OFFSET reduce using rule 4 (gCommand -> gWord .)
+    SET_RETRACT_LEN reduce using rule 4 (gCommand -> gWord .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 4 (gCommand -> gWord .)
+    ENABLE_AUTO_RETRACT reduce using rule 4 (gCommand -> gWord .)
+    SET_SPEED_OVERRIDE reduce using rule 4 (gCommand -> gWord .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 4 (gCommand -> gWord .)
+    $end            reduce using rule 4 (gCommand -> gWord .)
+    LETTER          shift and go to state 30
+    COMMENT         shift and go to state 29
+
+  ! COMMENT         [ reduce using rule 4 (gCommand -> gWord .) ]
+  ! LETTER          [ reduce using rule 4 (gCommand -> gWord .) ]
+
+
+state 25
+
+    (30) gWord -> SET_RECOV_OF_UNRETRACT .
+
+    LETTER          reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    COMMENT         reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    $end            reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    MOVE            reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    DWELL           reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    MOVE_TO_ORIGIN  reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    SET_POSITION    reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    SET_AXIS_STEPS  reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    SET_TEMP        reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    FAN_ON          reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    SET_TEMP_WAIT   reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    BED_TEMP        reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    WAIT_4_BED_TEMP reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    SET_FILAMENT_DIA reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    SET_MAX         reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    SET_DEFAULT_ACCEL reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    ADV_SETTINGS    reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    SET_HOME_OFFSET reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    SET_RETRACT_LEN reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    ENABLE_AUTO_RETRACT reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    SET_SPEED_OVERRIDE reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 30 (gWord -> SET_RECOV_OF_UNRETRACT .)
+
+
+state 26
+
+    (25) gWord -> SET_MAX .
+
+    LETTER          reduce using rule 25 (gWord -> SET_MAX .)
+    COMMENT         reduce using rule 25 (gWord -> SET_MAX .)
+    $end            reduce using rule 25 (gWord -> SET_MAX .)
+    MOVE            reduce using rule 25 (gWord -> SET_MAX .)
+    DWELL           reduce using rule 25 (gWord -> SET_MAX .)
+    MOVE_TO_ORIGIN  reduce using rule 25 (gWord -> SET_MAX .)
+    SET_POSITION    reduce using rule 25 (gWord -> SET_MAX .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 25 (gWord -> SET_MAX .)
+    SET_AXIS_STEPS  reduce using rule 25 (gWord -> SET_MAX .)
+    SET_TEMP        reduce using rule 25 (gWord -> SET_MAX .)
+    FAN_ON          reduce using rule 25 (gWord -> SET_MAX .)
+    SET_TEMP_WAIT   reduce using rule 25 (gWord -> SET_MAX .)
+    BED_TEMP        reduce using rule 25 (gWord -> SET_MAX .)
+    WAIT_4_BED_TEMP reduce using rule 25 (gWord -> SET_MAX .)
+    SET_FILAMENT_DIA reduce using rule 25 (gWord -> SET_MAX .)
+    SET_MAX         reduce using rule 25 (gWord -> SET_MAX .)
+    SET_DEFAULT_ACCEL reduce using rule 25 (gWord -> SET_MAX .)
+    ADV_SETTINGS    reduce using rule 25 (gWord -> SET_MAX .)
+    SET_HOME_OFFSET reduce using rule 25 (gWord -> SET_MAX .)
+    SET_RETRACT_LEN reduce using rule 25 (gWord -> SET_MAX .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 25 (gWord -> SET_MAX .)
+    ENABLE_AUTO_RETRACT reduce using rule 25 (gWord -> SET_MAX .)
+    SET_SPEED_OVERRIDE reduce using rule 25 (gWord -> SET_MAX .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 25 (gWord -> SET_MAX .)
+
+
+state 27
+
+    (34) gWord -> LETTER NUMBER .
+
+    LETTER          reduce using rule 34 (gWord -> LETTER NUMBER .)
+    COMMENT         reduce using rule 34 (gWord -> LETTER NUMBER .)
+    $end            reduce using rule 34 (gWord -> LETTER NUMBER .)
+    MOVE            reduce using rule 34 (gWord -> LETTER NUMBER .)
+    DWELL           reduce using rule 34 (gWord -> LETTER NUMBER .)
+    MOVE_TO_ORIGIN  reduce using rule 34 (gWord -> LETTER NUMBER .)
+    SET_POSITION    reduce using rule 34 (gWord -> LETTER NUMBER .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 34 (gWord -> LETTER NUMBER .)
+    SET_AXIS_STEPS  reduce using rule 34 (gWord -> LETTER NUMBER .)
+    SET_TEMP        reduce using rule 34 (gWord -> LETTER NUMBER .)
+    FAN_ON          reduce using rule 34 (gWord -> LETTER NUMBER .)
+    SET_TEMP_WAIT   reduce using rule 34 (gWord -> LETTER NUMBER .)
+    BED_TEMP        reduce using rule 34 (gWord -> LETTER NUMBER .)
+    WAIT_4_BED_TEMP reduce using rule 34 (gWord -> LETTER NUMBER .)
+    SET_FILAMENT_DIA reduce using rule 34 (gWord -> LETTER NUMBER .)
+    SET_MAX         reduce using rule 34 (gWord -> LETTER NUMBER .)
+    SET_DEFAULT_ACCEL reduce using rule 34 (gWord -> LETTER NUMBER .)
+    ADV_SETTINGS    reduce using rule 34 (gWord -> LETTER NUMBER .)
+    SET_HOME_OFFSET reduce using rule 34 (gWord -> LETTER NUMBER .)
+    SET_RETRACT_LEN reduce using rule 34 (gWord -> LETTER NUMBER .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 34 (gWord -> LETTER NUMBER .)
+    ENABLE_AUTO_RETRACT reduce using rule 34 (gWord -> LETTER NUMBER .)
+    SET_SPEED_OVERRIDE reduce using rule 34 (gWord -> LETTER NUMBER .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 34 (gWord -> LETTER NUMBER .)
+
+
+state 28
+
+    (2) gLine -> gCommand gCommand .
+
+    $end            reduce using rule 2 (gLine -> gCommand gCommand .)
+
+
+state 29
+
+    (11) gCommand -> gWord COMMENT .
+
+    COMMENT         reduce using rule 11 (gCommand -> gWord COMMENT .)
+    MOVE            reduce using rule 11 (gCommand -> gWord COMMENT .)
+    DWELL           reduce using rule 11 (gCommand -> gWord COMMENT .)
+    MOVE_TO_ORIGIN  reduce using rule 11 (gCommand -> gWord COMMENT .)
+    SET_POSITION    reduce using rule 11 (gCommand -> gWord COMMENT .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 11 (gCommand -> gWord COMMENT .)
+    SET_AXIS_STEPS  reduce using rule 11 (gCommand -> gWord COMMENT .)
+    SET_TEMP        reduce using rule 11 (gCommand -> gWord COMMENT .)
+    FAN_ON          reduce using rule 11 (gCommand -> gWord COMMENT .)
+    SET_TEMP_WAIT   reduce using rule 11 (gCommand -> gWord COMMENT .)
+    BED_TEMP        reduce using rule 11 (gCommand -> gWord COMMENT .)
+    WAIT_4_BED_TEMP reduce using rule 11 (gCommand -> gWord COMMENT .)
+    SET_FILAMENT_DIA reduce using rule 11 (gCommand -> gWord COMMENT .)
+    SET_MAX         reduce using rule 11 (gCommand -> gWord COMMENT .)
+    SET_DEFAULT_ACCEL reduce using rule 11 (gCommand -> gWord COMMENT .)
+    ADV_SETTINGS    reduce using rule 11 (gCommand -> gWord COMMENT .)
+    SET_HOME_OFFSET reduce using rule 11 (gCommand -> gWord COMMENT .)
+    SET_RETRACT_LEN reduce using rule 11 (gCommand -> gWord COMMENT .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 11 (gCommand -> gWord COMMENT .)
+    ENABLE_AUTO_RETRACT reduce using rule 11 (gCommand -> gWord COMMENT .)
+    SET_SPEED_OVERRIDE reduce using rule 11 (gCommand -> gWord COMMENT .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 11 (gCommand -> gWord COMMENT .)
+    LETTER          reduce using rule 11 (gCommand -> gWord COMMENT .)
+    $end            reduce using rule 11 (gCommand -> gWord COMMENT .)
+
+
+state 30
+
+    (5) gCommand -> gWord LETTER . NUMBER
+    (6) gCommand -> gWord LETTER . NUMBER LETTER NUMBER
+    (7) gCommand -> gWord LETTER . NUMBER LETTER NUMBER LETTER NUMBER
+    (8) gCommand -> gWord LETTER . NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (9) gCommand -> gWord LETTER . NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (10) gCommand -> gWord LETTER . NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+
+    NUMBER          shift and go to state 31
+
+
+state 31
+
+    (5) gCommand -> gWord LETTER NUMBER .
+    (6) gCommand -> gWord LETTER NUMBER . LETTER NUMBER
+    (7) gCommand -> gWord LETTER NUMBER . LETTER NUMBER LETTER NUMBER
+    (8) gCommand -> gWord LETTER NUMBER . LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (9) gCommand -> gWord LETTER NUMBER . LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (10) gCommand -> gWord LETTER NUMBER . LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+
+  ! shift/reduce conflict for LETTER resolved as shift
+    COMMENT         reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    MOVE            reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    DWELL           reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    MOVE_TO_ORIGIN  reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    SET_POSITION    reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    SET_AXIS_STEPS  reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    SET_TEMP        reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    FAN_ON          reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    SET_TEMP_WAIT   reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    BED_TEMP        reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    WAIT_4_BED_TEMP reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    SET_FILAMENT_DIA reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    SET_MAX         reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    SET_DEFAULT_ACCEL reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    ADV_SETTINGS    reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    SET_HOME_OFFSET reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    SET_RETRACT_LEN reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    ENABLE_AUTO_RETRACT reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    SET_SPEED_OVERRIDE reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    $end            reduce using rule 5 (gCommand -> gWord LETTER NUMBER .)
+    LETTER          shift and go to state 32
+
+  ! LETTER          [ reduce using rule 5 (gCommand -> gWord LETTER NUMBER .) ]
+
+
+state 32
+
+    (6) gCommand -> gWord LETTER NUMBER LETTER . NUMBER
+    (7) gCommand -> gWord LETTER NUMBER LETTER . NUMBER LETTER NUMBER
+    (8) gCommand -> gWord LETTER NUMBER LETTER . NUMBER LETTER NUMBER LETTER NUMBER
+    (9) gCommand -> gWord LETTER NUMBER LETTER . NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (10) gCommand -> gWord LETTER NUMBER LETTER . NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+
+    NUMBER          shift and go to state 33
+
+
+state 33
+
+    (6) gCommand -> gWord LETTER NUMBER LETTER NUMBER .
+    (7) gCommand -> gWord LETTER NUMBER LETTER NUMBER . LETTER NUMBER
+    (8) gCommand -> gWord LETTER NUMBER LETTER NUMBER . LETTER NUMBER LETTER NUMBER
+    (9) gCommand -> gWord LETTER NUMBER LETTER NUMBER . LETTER NUMBER LETTER NUMBER LETTER NUMBER
+    (10) gCommand -> gWord LETTER NUMBER LETTER NUMBER . LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+
+  ! shift/reduce conflict for LETTER resolved as shift
+    COMMENT         reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    MOVE            reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    DWELL           reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    MOVE_TO_ORIGIN  reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    SET_POSITION    reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    SET_AXIS_STEPS  reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    SET_TEMP        reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    FAN_ON          reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    SET_TEMP_WAIT   reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    BED_TEMP        reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    WAIT_4_BED_TEMP reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    SET_FILAMENT_DIA reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    SET_MAX         reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    SET_DEFAULT_ACCEL reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    ADV_SETTINGS    reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    SET_HOME_OFFSET reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    SET_RETRACT_LEN reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    ENABLE_AUTO_RETRACT reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    SET_SPEED_OVERRIDE reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    $end            reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .)
+    LETTER          shift and go to state 34
+
+  ! LETTER          [ reduce using rule 6 (gCommand -> gWord LETTER NUMBER LETTER NUMBER .) ]
+
+
+state 34
+
+    (7) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER . NUMBER
+    (8) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER . NUMBER LETTER NUMBER
+    (9) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER . NUMBER LETTER NUMBER LETTER NUMBER
+    (10) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER . NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER
+
+    NUMBER          shift and go to state 35
+
+
+state 35
+
+    (7) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .
+    (8) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER . LETTER NUMBER
+    (9) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER . LETTER NUMBER LETTER NUMBER
+    (10) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER . LETTER NUMBER LETTER NUMBER LETTER NUMBER
+
+  ! shift/reduce conflict for LETTER resolved as shift
+    COMMENT         reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    MOVE            reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    DWELL           reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    MOVE_TO_ORIGIN  reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_POSITION    reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_AXIS_STEPS  reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_TEMP        reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    FAN_ON          reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_TEMP_WAIT   reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    BED_TEMP        reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    WAIT_4_BED_TEMP reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_FILAMENT_DIA reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_MAX         reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_DEFAULT_ACCEL reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    ADV_SETTINGS    reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_HOME_OFFSET reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_RETRACT_LEN reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    ENABLE_AUTO_RETRACT reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_SPEED_OVERRIDE reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    $end            reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    LETTER          shift and go to state 36
+
+  ! LETTER          [ reduce using rule 7 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER .) ]
+
+
+state 36
+
+    (8) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER . NUMBER
+    (9) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER . NUMBER LETTER NUMBER
+    (10) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER . NUMBER LETTER NUMBER LETTER NUMBER
+
+    NUMBER          shift and go to state 37
+
+
+state 37
+
+    (8) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .
+    (9) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER . LETTER NUMBER
+    (10) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER . LETTER NUMBER LETTER NUMBER
+
+  ! shift/reduce conflict for LETTER resolved as shift
+    COMMENT         reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    MOVE            reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    DWELL           reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    MOVE_TO_ORIGIN  reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_POSITION    reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_AXIS_STEPS  reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_TEMP        reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    FAN_ON          reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_TEMP_WAIT   reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    BED_TEMP        reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    WAIT_4_BED_TEMP reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_FILAMENT_DIA reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_MAX         reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_DEFAULT_ACCEL reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    ADV_SETTINGS    reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_HOME_OFFSET reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_RETRACT_LEN reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    ENABLE_AUTO_RETRACT reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_SPEED_OVERRIDE reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    $end            reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    LETTER          shift and go to state 38
+
+  ! LETTER          [ reduce using rule 8 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .) ]
+
+
+state 38
+
+    (9) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER . NUMBER
+    (10) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER . NUMBER LETTER NUMBER
+
+    NUMBER          shift and go to state 39
+
+
+state 39
+
+    (9) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .
+    (10) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER . LETTER NUMBER
+
+  ! shift/reduce conflict for LETTER resolved as shift
+    COMMENT         reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    MOVE            reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    DWELL           reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    MOVE_TO_ORIGIN  reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_POSITION    reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_AXIS_STEPS  reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_TEMP        reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    FAN_ON          reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_TEMP_WAIT   reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    BED_TEMP        reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    WAIT_4_BED_TEMP reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_FILAMENT_DIA reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_MAX         reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_DEFAULT_ACCEL reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    ADV_SETTINGS    reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_HOME_OFFSET reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_RETRACT_LEN reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    ENABLE_AUTO_RETRACT reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_SPEED_OVERRIDE reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    $end            reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    LETTER          shift and go to state 40
+
+  ! LETTER          [ reduce using rule 9 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .) ]
+
+
+state 40
+
+    (10) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER . NUMBER
+
+    NUMBER          shift and go to state 41
+
+
+state 41
+
+    (10) gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .
+
+    COMMENT         reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    MOVE            reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    DWELL           reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    MOVE_TO_ORIGIN  reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_POSITION    reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_INACTIVITY_SHUTDOWN reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_AXIS_STEPS  reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_TEMP        reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    FAN_ON          reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_TEMP_WAIT   reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    BED_TEMP        reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    WAIT_4_BED_TEMP reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_FILAMENT_DIA reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_MAX         reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_DEFAULT_ACCEL reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    ADV_SETTINGS    reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_HOME_OFFSET reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_RETRACT_LEN reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_RECOV_OF_UNRETRACT reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    ENABLE_AUTO_RETRACT reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_SPEED_OVERRIDE reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    SET_EXTRUDE_OVERRIDE reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    LETTER          reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+    $end            reduce using rule 10 (gCommand -> gWord LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER LETTER NUMBER .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for LETTER in state 24 resolved as shift
+WARNING: shift/reduce conflict for COMMENT in state 24 resolved as shift
+WARNING: shift/reduce conflict for LETTER in state 31 resolved as shift
+WARNING: shift/reduce conflict for LETTER in state 33 resolved as shift
+WARNING: shift/reduce conflict for LETTER in state 35 resolved as shift
+WARNING: shift/reduce conflict for LETTER in state 37 resolved as shift
+WARNING: shift/reduce conflict for LETTER in state 39 resolved as shift

@@ -1,0 +1,5 @@
+is_server false
+locked false
+log true
+slicer_path /bin/slic3r/bin/slic3r
+port 8080

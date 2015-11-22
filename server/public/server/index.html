@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://malsup.github.com/jquery.form.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="share/pi.css">
+        <script src="share/pi.js"></script>
+
+        <script>
+            var is_server = true;
+
+            window.onload = function() {
+                populatePrinterList();
+            }
+        </script>
+    </head>
+    <title>PiBaker Wireless Print</title>
+    <body>
+        <center>
+            <h1>Upload a File to Print:</h1>
+            <div id="icontent">
+                <div style="width: 100%; padding-top: 40px;">
+                    <form id="fileupload" action="/api/modelupload" method="post" enctype="multipart/form-data">
+
+                        <!-- Browse Box -->
+                        <div class="input-group col-xs-12 col-sm-8">
+
+                            <!-- Browse Button -->
+                            <span class="input-group-btn">
+                                <span class="btn btn-primary btn-file clear-alert">
+                                    Browse: <input type="file" name="model" id="model"></input>
+                                </span>
+                            </span>
+
+                            <!-- Paste a link -->
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default clear-alert" id="input-link" style="border-radius: 0px !important;"  data-toggle="modal" data-target="#print-url-modal">
+                                  <span class="glyphicon glyphicon-link" aria-hidden="true" style=""></span>&nbsp;
+                                </button>
+                            </span>
+
+                            <!-- Text Display -->
+                            <input type="text" class="form-control" id="upload-text-display" readonly></input>
+
+                            <!-- Hold selected printer to submit -->
+                            <input type="hidden" id="print-target" name="target"></input>
+
+                            <!-- Hold the input url to submit, if a url is being sent -->
+                            <input type="hidden" id="print-url" name="url"></input>
+
+                            <!-- Says if this is a file upload (0) or url upload (1) -->
+                            <input type="hidden" id="print-type" name="type"></input>
+
+                            <!-- Printer Select -->
+                            <div class="input-group-btn" role="group">
+                                <button type="button" id="printer-select-display" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                </button>
+
+                                <ul class="dropdown-menu pull-right" id="printer-select" role="menu">
+                                    <!-- Dynamically Populated -->
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                            <div class="progress" style="height: 3px;">
+                              <div id="uploadprogress" class="progress-bar progress-bar-success" role="progressbar" style="width: 0%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Printer status -->
+                        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                            <span id="serverStatus"></span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <input id="print-submit" type="submit" name="submit" value="submit" class="btn btn-primary col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-5" style="margin-top: 39px;"></input>
+
+                    </form>
+                </div>
+            </div>
+        </center>
+
+        <!-- Even though these two modals are basically the same, they are replicated with different id's so that adding a
+        printer and editing one can be differentiated (to avoid unintentional overwriting of printers by using the same name) -->
+        <div class="modal fade" id="add-printer-modal" tabindex="-1" role="dialog" aria-labelledby="add-printer" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Add Printer</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="input-group" style="width: 100%">
+                            <input type="text" class="form-control" placeholder="Printer Name" id="add-printer-name"></input>
+                            <input type="text" class="form-control" placeholder="Printer IP" id="add-printer-ip" style="margin-top: 10px"></input>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="add-printer-submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="edit-printer-modal" tabindex="-1" role="dialog" aria-labelledby="edit-printer" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Edit Printer</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="input-group" style="width: 100%">
+                            <input type="text" class="form-control" placeholder="Printer Name" id="edit-printer-name"></input>
+                            <input type="text" class="form-control" placeholder="Printer IP" id="edit-printer-ip" style="margin-top: 10px"></input>
+                            <input type="hidden" id="edit-printer-oname"></input>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="edit-printer-submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="print-url-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Print From URL</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="input-group" style="width: 100%">
+                            <input type="text" class="form-control" placeholder="URL" id="download-url"></input>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="print-url-submit">Submit</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </body>
+</html>
